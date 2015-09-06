@@ -13,6 +13,10 @@
 		166D977A1B4692B7002D2220 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 166D97791B4692B7002D2220 /* Images.xcassets */; };
 		166D977D1B4692B7002D2220 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 166D977B1B4692B7002D2220 /* LaunchScreen.xib */; };
 		166D97891B4692B7002D2220 /* LKSwiftWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166D97881B4692B7002D2220 /* LKSwiftWeatherTests.swift */; };
+		166D97931B46B6D1002D2220 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166D97921B46B6D1002D2220 /* Alamofire.framework */; };
+		168EFBFB1B46C00600AFD54D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 168EFBFA1B46C00600AFD54D /* SwiftyJSON.framework */; };
+		16EE70981B569B5F00559CC5 /* LKDailyReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE70971B569B5F00559CC5 /* LKDailyReportCell.swift */; };
+		16EE709A1B56A31A00559CC5 /* LKWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE70991B56A31A00559CC5 /* LKWeatherService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		166D97821B4692B7002D2220 /* LKSwiftWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LKSwiftWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		166D97871B4692B7002D2220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		166D97881B4692B7002D2220 /* LKSwiftWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LKSwiftWeatherTests.swift; sourceTree = "<group>"; };
+		166D97921B46B6D1002D2220 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		168EFBFA1B46C00600AFD54D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		16EE70971B569B5F00559CC5 /* LKDailyReportCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LKDailyReportCell.swift; sourceTree = "<group>"; };
+		16EE70991B56A31A00559CC5 /* LKWeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LKWeatherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168EFBFB1B46C00600AFD54D /* SwiftyJSON.framework in Frameworks */,
+				166D97931B46B6D1002D2220 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				166D976F1B4692B7002D2220 /* LKSwiftWeather */,
+				168EFBFC1B46C00C00AFD54D /* Framework */,
 				166D97851B4692B7002D2220 /* LKSwiftWeatherTests */,
 				166D976E1B4692B7002D2220 /* Products */,
 			);
@@ -78,10 +89,12 @@
 			isa = PBXGroup;
 			children = (
 				166D97721B4692B7002D2220 /* AppDelegate.swift */,
+				16EE70971B569B5F00559CC5 /* LKDailyReportCell.swift */,
+				16EE70991B56A31A00559CC5 /* LKWeatherService.swift */,
 				166D97741B4692B7002D2220 /* ViewController.swift */,
-				166D97761B4692B7002D2220 /* Main.storyboard */,
 				166D97791B4692B7002D2220 /* Images.xcassets */,
 				166D977B1B4692B7002D2220 /* LaunchScreen.xib */,
+				166D97761B4692B7002D2220 /* Main.storyboard */,
 				166D97701B4692B7002D2220 /* Supporting Files */,
 			);
 			path = LKSwiftWeather;
@@ -112,6 +125,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		168EFBFC1B46C00C00AFD54D /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				168EFBFA1B46C00600AFD54D /* SwiftyJSON.framework */,
+				166D97921B46B6D1002D2220 /* Alamofire.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,6 +144,7 @@
 				166D97691B4692B7002D2220 /* Sources */,
 				166D976A1B4692B7002D2220 /* Frameworks */,
 				166D976B1B4692B7002D2220 /* Resources */,
+				168EFBFE1B482D6F00AFD54D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -207,13 +230,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		168EFBFE1B482D6F00AFD54D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		166D97691B4692B7002D2220 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				166D97751B4692B7002D2220 /* ViewController.swift in Sources */,
+				16EE709A1B56A31A00559CC5 /* LKWeatherService.swift in Sources */,
 				166D97731B4692B7002D2220 /* AppDelegate.swift in Sources */,
+				16EE70981B569B5F00559CC5 /* LKDailyReportCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -329,7 +372,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -340,7 +383,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = LKSwiftWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -350,7 +398,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = LKSwiftWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -409,6 +462,7 @@
 				166D978E1B4692B7002D2220 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		166D978F1B4692B7002D2220 /* Build configuration list for PBXNativeTarget "LKSwiftWeatherTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +471,7 @@
 				166D97911B4692B7002D2220 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
